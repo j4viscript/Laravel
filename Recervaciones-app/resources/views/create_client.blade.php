@@ -8,5 +8,36 @@
 </head>
 <body>
     
+
+<form method="post" action="http://127.0.0.1:8000/clients/">
+    @csrf
+        <label>
+            Nombre
+        </label>
+        <input type="text" name="name">
+        <br>
+        <br>
+        <label>
+            LastName
+        </label>
+        <input type="text" name="lastname">
+        <br>
+        <br>
+        <label>
+            Phone Number
+        </label>
+        <input type="text" name="phone_number">
+        <br>
+        <br>
+        <label>
+            Email
+        </label>
+        <input type="email" name="email">
+        <br>
+        <br>
+        <button>
+            guardar
+        </button>
+</form>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -13,7 +13,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        return Client::all();
     }
 
     /**
@@ -24,6 +24,7 @@ class ClientController extends Controller
     public function create()
     {
         //
+        return view('create_client');
     }
 
     /**
@@ -34,7 +35,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $client = Client::create($request->all());
+        return $client;
     }
 
     /**
@@ -45,7 +47,7 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        return  Client::find($id);
     }
 
     /**
