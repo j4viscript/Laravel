@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         $user-> name = 'Oskar';
         $user-> lastname = 'Cota';
         $user-> email = 'OskarC@gmail.com';
-        $user-> password = 'cocos3';
+        $user-> password = bcrypt('cocos3');
 
         $user->save();
 
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         $user-> name = 'Adrian';
         $user-> lastname = 'Ramirez';
         $user-> email = 'AdrianR@gmail.com';
-        $user-> password = 'cocazos3';
+        $user-> password =  bcrypt('cocazos3');
 
         $user->save();
     }
