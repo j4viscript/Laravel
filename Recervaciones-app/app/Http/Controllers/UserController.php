@@ -13,8 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        // Para traerse todo
-        return User::all();
+        $users = User::all();
+        return view('users.index', compact('users'));
         // return User::select('name')->get(); para nombres o una sola cosa
     }
 
@@ -49,7 +49,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return  User::find($id);
+
+        $user = User::find($id);
+        return  view('users.update', compact('user'));
     }
 
     /**

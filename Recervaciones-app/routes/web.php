@@ -21,17 +21,22 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('auth.login');
-});
+})->name('login');
 
 Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-// User RouteS
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/users/create', [UserController::class, 'create']); 
-Route::get('/users/{id}', [UserController::class, 'show']);
-Route::post('/users', [UserController::class, 'store']);
+
+
+Route::middleware(['auth'])->group(function () {
+    // User RouteS
+    Route::get('/users', [UserController::class, 'index']);
+    Route::get('/users/create', [UserController::class, 'create']); 
+    Route::get('/users/{id}', [UserController::class, 'show']);
+    Route::post('/users', [UserController::class, 'store']);
+});
+
 
 
 // Clients Routes
